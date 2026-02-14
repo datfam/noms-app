@@ -4,32 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - NOMS</title>
+    <link rel="icon" type="image/png" href="noms_logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #D4735E; --bg: #FAF9F7; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #333; line-height: 1.6; margin: 0; padding: 40px 20px; }
-        .container { max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1, h2 { color: var(--primary); }
-        .back-link { display: inline-block; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #333; line-height: 1.7; margin: 0; padding: 40px 20px; }
+        .container { max-width: 750px; margin: 0 auto; background: white; padding: 50px; border-radius: 32px; box-shadow: 0 15px 50px rgba(0,0,0,0.05); }
+        .logo-small { width: 50px; margin-bottom: 20px; }
+        h1 { color: var(--primary); font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
+        h2 { color: var(--primary); margin-top: 40px; font-size: 1.6rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .back-link { display: inline-block; margin-bottom: 30px; color: var(--primary); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+        .back-link:hover { opacity: 0.7; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 12px; }
+        footer { text-align: center; margin-top: 50px; color: #bbb; }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="./" class="back-link">← Back</a>
+        <a href="index.html" class="back-link">← Legal Center</a>
+        <img src="noms_logo.png" alt="NOMS" class="logo-small">
         <h1>Privacy Policy</h1>
         <p><strong>Last updated: February 14, 2026</strong></p>
-        <p>NOMS is built with a "Privacy First" mindset. Your data belongs to you.</p>
         
-        <h2>1. Image Processing</h2>
-        <p>All image processing, including background removal for your stickers, happens 100% on your device. We never upload your photos to any external servers.</p>
-        
-        <h2>2. Data Storage</h2>
-        <p>Your food journal and spending data are stored locally on your iPhone and synced securely via your personal iCloud account.</p>
-        
-        <h2>3. Location Services</h2>
-        <p>Location data is only used to tag your entries locally if you grant permission. We do not track or share your location.</p>
-        
-        <p>Contact: <a href="mailto:support@datfam.com" style="color: var(--primary);">support@datfam.com</a></p>
+        <p>NOMS is designed to be a "Local-First" application. We believe your memories, photos, and spending habits should remain under your control.</p>
+
+        <h2>1. Image Processing & Privacy</h2>
+        <p>Our core feature involves creating stickers from your food photos. All image processing (including background removal) happens <strong>locally on your device</strong> using Apple's Neural Engine. We do not upload, store, or see your original or edited photos.</p>
+
+        <h2>2. Data Storage & Sync</h2>
+        <p>Your logs, spending data, and categories are stored in your private <strong>iCloud database</strong>. This ensures your data is synced across your devices while remaining inaccessible to the developer or any third party.</p>
+
+        <h2>3. Permissions</h2>
+        <ul>
+            <li><strong>Camera & Photo Library:</strong> Used solely to capture food and manage your visual journal.</li>
+            <li><strong>Location:</strong> Used only if you choose to tag where you ate. This data stays on your device and iCloud.</li>
+        </ul>
+
+        <h2>4. Contact</h2>
+        <p>Questions? Contact us at: <a href="mailto:support@datfam.com" style="color: var(--primary);">support@datfam.com</a></p>
     </div>
+    <footer>© 2026 NOMS App</footer>
 </body>
 </html>
