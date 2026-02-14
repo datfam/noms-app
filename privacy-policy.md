@@ -23,4 +23,4 @@ We use standard Apple services:
 These services are governed by Apple's own Privacy Policy.
 
 ### 4. Contact Us
-If you have any questions regarding this policy, please contact us at: [Email của bạn]
+If you have any questions regarding this policy, please contact us at: [phamtiendat1099@gmail.com]
