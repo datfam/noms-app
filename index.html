@@ -3,28 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOMS Legal Center</title>
+    <title>NOMS - Legal Center</title>
+    <link rel="icon" type="image/png" href="noms_logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #D4735E; --bg: #FAF9F7; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
-        header { text-align: center; margin-bottom: 40px; }
-        .logo { font-size: 80px; margin-bottom: 10px; }
-        h1 { color: var(--primary); font-size: 3rem; margin: 0; font-weight: 800; }
-        .links { display: flex; gap: 20px; }
-        .btn { padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; border: 2px solid var(--primary); color: var(--primary); transition: 0.3s; }
-        .btn:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .hero { text-align: center; margin-bottom: 50px; }
+        .main-logo { width: 120px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 10px 15px rgba(212, 115, 94, 0.3)); transition: transform 0.3s ease; }
+        .main-logo:hover { transform: scale(1.05) rotate(5deg); }
+        h1 { color: var(--primary); font-size: 3.5rem; font-weight: 800; margin: 0; letter-spacing: -2px; }
+        .tagline { color: #666; font-size: 1.2rem; margin-top: 10px; }
+        .links { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+        .card { background: white; padding: 30px; border-radius: 24px; text-decoration: none; color: inherit; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s; width: 220px; text-align: center; border: 2px solid transparent; }
+        .card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 15px 40px rgba(212, 115, 94, 0.15); }
+        .card h3 { color: var(--primary); margin: 0 0 10px 0; font-size: 1.4rem; }
+        .card p { margin: 0; color: #888; font-size: 0.95rem; }
+        footer { margin-top: 80px; color: #bbb; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">🧀</div>
+    <div class="hero">
+        <img src="noms_logo.png" alt="NOMS Logo" class="main-logo">
         <h1>NOMS</h1>
-        <p>Legal & Privacy Information</p>
-    </header>
-    <div class="links">
-        <a href="privacy-policy" class="btn">Privacy Policy</a>
-        <a href="terms-of-use" class="btn">Terms of Use</a>
+        <p class="tagline">Visual Food Journal & Sticker Diary</p>
     </div>
+
+    <div class="links">
+        <a href="privacy-policy.html" class="card">
+            <h3>Privacy</h3>
+            <p>How we protect your data</p>
+        </a>
+        <a href="terms-of-use.html" class="card">
+            <h3>Terms</h3>
+            <p>App usage & subscriptions</p>
+        </a>
+    </div>
+
+    <footer>© 2026 NOMS App. Made for foodies.</footer>
 </body>
 </html>
