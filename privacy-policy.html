@@ -17,6 +17,7 @@
         .back-link:hover { opacity: 0.7; }
         ul { padding-left: 20px; }
         li { margin-bottom: 12px; }
+        .highlight { background: #FFF3EE; border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 8px; margin: 20px 0; }
         footer { text-align: center; margin-top: 50px; color: #bbb; }
     </style>
 </head>
@@ -25,23 +26,40 @@
         <a href="index.html" class="back-link">← Legal Center</a>
         <img src="noms_logo.png" alt="NOMS" class="logo-small">
         <h1>Privacy Policy</h1>
-        <p><strong>Last updated: February 14, 2026</strong></p>
+        <p><strong>Last updated: March 1, 2026</strong></p>
         
         <p>NOMS is designed to be a "Local-First" application. We believe your memories, photos, and spending habits should remain under your control.</p>
 
         <h2>1. Image Processing & Privacy</h2>
-        <p>Our core feature involves creating stickers from your food photos. All image processing (including background removal) happens <strong>locally on your device</strong> using Apple's Neural Engine. We do not upload, store, or see your original or edited photos.</p>
+        <p>Our core feature involves creating stickers from your food photos. All sticker creation, including background removal, happens <strong>locally on your device</strong> using Apple's Neural Engine. These processed images are never uploaded to any server.</p>
 
-        <h2>2. Data Storage & Sync</h2>
+        <h2>2. AI Nutrition Estimation</h2>
+        <div class="highlight">
+            <p>NOMS offers an optional AI-powered feature that estimates the nutritional content (calories, carbs, protein, fat) of your food based on a photo. This feature requires sending data to an external service and is only activated with your <strong>explicit consent</strong>.</p>
+        </div>
+        <p><strong>What data is sent:</strong> When you choose to use AI nutrition estimation, a compressed copy of your food photo is sent to the AI service for analysis. No other personal data (such as your name, location, account information, or any other photos) is included in this request.</p>
+        <p><strong>Third-party processor:</strong> The photo is processed by <strong>Groq Inc.</strong> (groq.com), a third-party AI inference service based in the United States. NOMS does not control how Groq processes or retains data after transmission. You can review Groq's privacy practices at <a href="https://groq.com/privacy-policy/" style="color: var(--primary);">groq.com/privacy-policy</a>.</p>
+        <p><strong>Purpose:</strong> The photo is used solely to generate an estimated nutritional breakdown for the food depicted. It is not used for advertising, profiling, or any other purpose by NOMS.</p>
+        <p><strong>Retention by NOMS:</strong> NOMS does not store, cache, or log your food photos on any server operated by NOMS. The photo is transmitted directly from your device to Groq's API and discarded from memory after the response is received.</p>
+        <p><strong>Consent:</strong> This feature is entirely optional. The first time you use it, NOMS will present a clear disclosure and ask for your agreement before any data leaves your device. If you decline, no data is sent and the feature is simply not used. You can always enter nutrition information manually instead.</p>
+
+        <h2>3. Data Storage & Sync</h2>
         <p>Your logs, spending data, and categories are stored in your private <strong>iCloud database</strong>. This ensures your data is synced across your devices while remaining inaccessible to the developer or any third party.</p>
 
-        <h2>3. Permissions</h2>
+        <h2>4. Permissions</h2>
         <ul>
             <li><strong>Camera & Photo Library:</strong> Used solely to capture food and manage your visual journal.</li>
             <li><strong>Location:</strong> Used only if you choose to tag where you ate. This data stays on your device and iCloud.</li>
+            <li><strong>Network:</strong> Required only for the optional AI nutrition estimation feature and iCloud sync. No data is sent to any server without your knowledge.</li>
         </ul>
 
-        <h2>4. Contact</h2>
+        <h2>5. Children's Privacy</h2>
+        <p>NOMS does not knowingly collect personal information from children under the age of 13. The AI nutrition estimation feature is not directed at children.</p>
+
+        <h2>6. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date. Continued use of NOMS after changes constitutes acceptance of the revised policy.</p>
+
+        <h2>7. Contact</h2>
         <p>Questions? Contact us at: <a href="mailto:phamtiendat1099@gmail.com" style="color: var(--primary);">phamtiendat1099@gmail.com</a></p>
     </div>
     <footer>© 2026 NOMS App</footer>
