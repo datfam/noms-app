@@ -23,15 +23,16 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">&larr; Legal Center</a>
+        <a href="index.html" class="back-link">&larr; Back to NOMS</a>
         <img src="noms_logo.png" alt="NOMS" class="logo-small">
         <h1>Privacy Policy</h1>
-        <p><strong>Last updated: March 18, 2026</strong></p>
+        <p><strong>Last updated: March 29, 2026</strong></p>
+        <p><strong>Applies to:</strong> NOMS on iOS (App Store) and Android (Google Play)</p>
         
         <p>NOMS is designed to be a &ldquo;Local-First&rdquo; application. We believe your memories, photos, and spending habits should remain under your control. This policy explains what data we collect, how we use it, and your rights regarding that data.</p>
 
         <h2>1. Image Processing &amp; Privacy</h2>
-        <p>Our core feature involves creating stickers from your food photos. All sticker creation, including background removal, happens <strong>locally on your device</strong> using Apple&rsquo;s Neural Engine. These processed images are never uploaded to any server.</p>
+        <p>Our core feature involves creating stickers from your food photos. All sticker creation, including background removal, happens <strong>locally on your device</strong> using on-device AI (Apple&rsquo;s Neural Engine on iOS, Google ML Kit on Android). These processed images are never uploaded to any server.</p>
 
         <h2>2. AI Nutrition Estimation</h2>
         <div class="highlight">
@@ -47,7 +48,7 @@
         <div class="highlight">
             <p>NOMS includes an optional social feature called <strong>Peek</strong> that lets you share food entries with friends and see what they ate. Peek requires authentication and stores data on an external server.</p>
         </div>
-        <p><strong>Authentication:</strong> Peek uses <strong>Sign in with Apple</strong> to create your account. We receive only the information Apple provides (a unique user identifier and, if you choose to share, your email and name). We do not receive your Apple ID password.</p>
+        <p><strong>Authentication:</strong> Peek uses <strong>Sign in with Apple</strong> (on iOS) or <strong>Google Sign-In</strong> (on Android) to create your account. We receive only the information the platform provides (a unique user identifier and, if you choose to share, your email and name). We do not receive your password.</p>
         <p><strong>What data is stored:</strong> When you use Peek, the following data is stored on our server:</p>
         <ul>
             <li>Your Peek profile: display name, emoji avatar, food tag (a unique identifier for friends to add you).</li>
@@ -56,31 +57,31 @@
             <li>Friend connections: which users you are connected with.</li>
             <li>Subscription status: whether you are a PRO subscriber (used only for display badges and feature limits).</li>
         </ul>
-        <p><strong>What data is NOT stored:</strong> Your spending/price data, full nutrition details beyond calories, your local food diary entries that you choose not to share, and your Apple ID credentials.</p>
+        <p><strong>What data is NOT stored:</strong> Your spending/price data, full nutrition details beyond calories, your local food diary entries that you choose not to share, and your login credentials.</p>
         <p><strong>Third-party processor:</strong> Peek data is stored and processed by <strong>Supabase Inc.</strong> (supabase.com), a cloud database service. Food photos shared via Peek are stored on <strong>Cloudflare R2</strong> object storage. You can review their privacy practices at <a href="https://supabase.com/privacy" style="color: var(--primary);">supabase.com/privacy</a> and <a href="https://www.cloudflare.com/privacypolicy/" style="color: var(--primary);">cloudflare.com/privacypolicy</a>.</p>
         <p><strong>Data retention:</strong> Shared food entries on Peek are visible to your friends for up to 2 days (7 days for PRO subscribers), after which they are automatically removed from the server. Your profile and friend connections remain until you delete your Peek account.</p>
         <p><strong>Visibility:</strong> Your shared food entries are visible <strong>only</strong> to users you have accepted as friends. They are not visible to the public or to other NOMS users who are not your friends.</p>
-        <p><strong>Consent:</strong> Peek is entirely optional. You must explicitly set up a Peek account and sign in with Apple before any data is shared. Each food entry requires you to toggle the Peek icon on before it is shared. You can delete your Peek account at any time from within the app.</p>
+        <p><strong>Consent:</strong> Peek is entirely optional. You must explicitly set up a Peek account and sign in before any data is shared. Each food entry requires you to toggle the Peek icon on before it is shared. You can delete your Peek account at any time from within the app.</p>
 
         <h2>4. Advertising</h2>
         <div class="highlight">
-            <p>NOMS displays advertisements to free users within the Peek social feature. PRO subscribers do not see any advertisements.</p>
+            <p>NOMS displays advertisements to free users. PRO subscribers do not see any advertisements.</p>
         </div>
-        <p><strong>Ad provider:</strong> Advertisements are served by <strong>Google AdMob</strong> (Google LLC). AdMob may collect device information such as advertising identifier (IDFA, if permitted), device type, OS version, and general interaction data to serve relevant ads.</p>
-        <p><strong>Rewarded ads:</strong> NOMS offers optional rewarded video ads that you can choose to watch in exchange for temporary benefits (such as additional food entries per day or a 24-hour skin trial). These ads are never shown without your explicit action.</p>
+        <p><strong>Ad provider:</strong> Advertisements are served by <strong>Google AdMob</strong> (Google LLC). AdMob may collect device information such as advertising identifier (IDFA on iOS, Advertising ID on Android), device type, OS version, and general interaction data to serve relevant ads.</p>
+        <p><strong>Rewarded ads:</strong> NOMS offers optional rewarded video ads that you can choose to watch in exchange for temporary benefits (such as a 24-hour skin trial). These ads are never shown without your explicit action.</p>
         <p><strong>No personal data shared for ads:</strong> NOMS does not share your food diary data, photos, spending information, or Peek social data with any advertising network.</p>
-        <p><strong>Opting out:</strong> You can limit ad tracking through your device&rsquo;s privacy settings (Settings &rarr; Privacy &amp; Security &rarr; Tracking). PRO subscribers see no ads at all.</p>
+        <p><strong>Opting out:</strong> You can limit ad tracking through your device&rsquo;s privacy settings. On iOS: Settings &rarr; Privacy &amp; Security &rarr; Tracking. On Android: Settings &rarr; Privacy &rarr; Ads. PRO subscribers see no ads at all.</p>
         <p><strong>Third-party policies:</strong> You can review Google&rsquo;s advertising privacy practices at <a href="https://policies.google.com/privacy" style="color: var(--primary);">policies.google.com/privacy</a>.</p>
 
         <h2>5. Data Storage &amp; Sync</h2>
-        <p>Your local food logs, spending data, and categories are stored on your device. Backup and sync across your devices is handled through your private <strong>iCloud</strong> account. This data remains inaccessible to the developer or any third party.</p>
+        <p>Your local food logs, spending data, and categories are stored on your device. On iOS, backup and sync across your devices is handled through your private <strong>iCloud</strong> account. On Android, data is stored locally on the device. This data remains inaccessible to the developer or any third party.</p>
 
         <h2>6. Permissions</h2>
         <ul>
             <li><strong>Camera &amp; Photo Library:</strong> Used solely to capture food photos and manage your visual journal.</li>
-            <li><strong>Location:</strong> Used only if you choose to tag where you ate. This data stays on your device and iCloud. Location names (not precise coordinates) may be included in Peek shared entries if you choose to share them.</li>
+            <li><strong>Location:</strong> Used only if you choose to tag where you ate. This data stays on your device. Location names (not precise coordinates) may be included in Peek shared entries if you choose to share them.</li>
             <li><strong>Notifications:</strong> Used for streak reminders, weekly recaps, and Peek friend request alerts. You can disable notifications at any time in Settings.</li>
-            <li><strong>Network:</strong> Required for AI nutrition estimation, Peek social features, advertisements, analytics, and iCloud sync.</li>
+            <li><strong>Network:</strong> Required for AI nutrition estimation, Peek social features, advertisements, analytics, and cloud sync.</li>
         </ul>
 
         <h2>7. Analytics &amp; Remote Configuration</h2>
@@ -92,25 +93,24 @@
         <p><strong>No advertising use:</strong> Analytics data is used solely for product improvement. It is never used for advertising, profiling, or sold to third parties.</p>
 
         <h2>8. Subscription Management</h2>
-        <p>NOMS PRO subscriptions are processed through the <strong>Apple App Store</strong>. Subscription status is verified through <strong>RevenueCat Inc.</strong>, a third-party subscription management service. RevenueCat receives only your anonymous App Store transaction data to verify your subscription status. You can review RevenueCat&rsquo;s privacy practices at <a href="https://www.revenuecat.com/privacy" style="color: var(--primary);">revenuecat.com/privacy</a>.</p>
+        <p>NOMS PRO subscriptions are processed through the <strong>Apple App Store</strong> (on iOS) and <strong>Google Play Store</strong> (on Android). Subscription status is verified through <strong>RevenueCat Inc.</strong>, a third-party subscription management service. RevenueCat receives only your anonymous transaction data to verify your subscription status. You can review RevenueCat&rsquo;s privacy practices at <a href="https://www.revenuecat.com/privacy" style="color: var(--primary);">revenuecat.com/privacy</a>.</p>
 
         <h2>9. Account Deletion &amp; Data Removal</h2>
         <div class="highlight">
             <p>You have the right to delete your data at any time.</p>
         </div>
-        <p><strong>Local data:</strong> You can delete the app to remove all local data. Alternatively, individual food entries can be deleted within the app.</p>
+        <p><strong>Local data:</strong> You can delete all data from within the app via Settings &rarr; Delete All Data. Alternatively, uninstalling the app removes all local data from your device.</p>
         <p><strong>Peek account:</strong> You can delete your Peek account from within the app (Profile &rarr; Delete Peek Account). This permanently removes your Peek profile, all shared food entries, photos, reactions, and friend connections from our servers. This action cannot be undone.</p>
-        <p><strong>iCloud data:</strong> Data synced to iCloud can be managed through your device&rsquo;s iCloud settings.</p>
+        <p><strong>Cloud data:</strong> On iOS, data synced to iCloud can be managed through your device&rsquo;s iCloud settings. On Android, all data is stored locally and removed when the app is uninstalled.</p>
         <p><strong>Analytics data:</strong> Firebase Analytics data is anonymous and cannot be linked back to you. It is retained according to Google&rsquo;s standard retention policies.</p>
 
         <h2>10. Third-Party Services Summary</h2>
         <ul>
             <li><strong>Apple (Sign in with Apple, iCloud, App Store):</strong> <a href="https://www.apple.com/legal/privacy/" style="color: var(--primary);">apple.com/legal/privacy</a></li>
+            <li><strong>Google (Google Play, Google Sign-In, AdMob, Firebase):</strong> <a href="https://policies.google.com/privacy" style="color: var(--primary);">policies.google.com/privacy</a></li>
             <li><strong>Supabase (Peek database):</strong> <a href="https://supabase.com/privacy" style="color: var(--primary);">supabase.com/privacy</a></li>
             <li><strong>Cloudflare (Peek photo storage):</strong> <a href="https://www.cloudflare.com/privacypolicy/" style="color: var(--primary);">cloudflare.com/privacypolicy</a></li>
             <li><strong>Groq (AI nutrition estimation):</strong> <a href="https://groq.com/privacy-policy/" style="color: var(--primary);">groq.com/privacy-policy</a></li>
-            <li><strong>Google Firebase (Analytics, Remote Config, AdMob):</strong> <a href="https://firebase.google.com/support/privacy" style="color: var(--primary);">firebase.google.com/support/privacy</a></li>
-            <li><strong>Google AdMob (Advertising):</strong> <a href="https://policies.google.com/privacy" style="color: var(--primary);">policies.google.com/privacy</a></li>
             <li><strong>RevenueCat (Subscription verification):</strong> <a href="https://www.revenuecat.com/privacy" style="color: var(--primary);">revenuecat.com/privacy</a></li>
         </ul>
 
