@@ -10,161 +10,49 @@
         :root { --primary: #D4735E; --primary-light: #E8956F; --bg: #FAF9F7; --text: #2D2D2D; --muted: #999; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); min-height: 100vh; }
-
-        /* Hero Section */
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 85vh;
-            padding: 60px 24px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 85vh; padding: 60px 24px 40px; text-align: center; position: relative; overflow: hidden;
         }
-
-        /* Subtle background glow */
         .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
+            content: ''; position: absolute; width: 500px; height: 500px;
             background: radial-gradient(circle, rgba(212,115,94,0.08) 0%, transparent 70%);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -55%);
-            pointer-events: none;
+            top: 50%; left: 50%; transform: translate(-50%, -55%); pointer-events: none;
         }
-
-        .logo-wrap {
-            position: relative;
-            margin-bottom: 28px;
-        }
+        .logo-wrap { position: relative; margin-bottom: 28px; }
         .main-logo {
-            width: 110px;
-            height: 110px;
-            border-radius: 28px;
-            filter: drop-shadow(0 12px 24px rgba(212, 115, 94, 0.25));
-            transition: transform 0.4s ease;
+            width: 110px; height: 110px; border-radius: 28px;
+            filter: drop-shadow(0 12px 24px rgba(212, 115, 94, 0.25)); transition: transform 0.4s ease;
         }
         .main-logo:hover { transform: scale(1.08) rotate(3deg); }
-
-        .app-name {
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: var(--text);
-            letter-spacing: -2px;
-            line-height: 1;
-        }
+        .app-name { font-size: 3.2rem; font-weight: 800; color: var(--text); letter-spacing: -2px; line-height: 1; }
         .app-name span { color: var(--primary); }
-
-        .tagline {
-            color: var(--muted);
-            font-size: 1.1rem;
-            font-weight: 400;
-            margin-top: 12px;
-            letter-spacing: 0.2px;
-        }
-
-        /* Store Buttons */
-        .store-buttons {
-            display: flex;
-            gap: 14px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+        .tagline { color: var(--muted); font-size: 1.1rem; font-weight: 400; margin-top: 12px; letter-spacing: 0.2px; }
+        .store-buttons { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; justify-content: center; }
         .store-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 11px;
-            padding: 12px 24px;
-            border-radius: 14px;
-            text-decoration: none;
-            color: white;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-            background: #111;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            display: inline-flex; align-items: center; gap: 11px; padding: 12px 24px; border-radius: 14px;
+            text-decoration: none; color: white; font-family: 'Inter', sans-serif; transition: all 0.3s ease;
+            background: #111; box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
-        .store-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-        }
-        .store-btn.coming-soon {
-            opacity: 0.5;
-            cursor: default;
-        }
-        .store-btn.coming-soon:hover {
-            transform: none;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        }
+        .store-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
         .store-icon { width: 24px; height: 24px; flex-shrink: 0; }
         .store-text { text-align: left; line-height: 1.15; }
         .store-text-small { font-size: 9px; font-weight: 500; opacity: 0.75; letter-spacing: 0.4px; text-transform: uppercase; }
         .store-text-big { font-size: 16px; font-weight: 600; letter-spacing: -0.2px; }
-        .soon-badge {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            font-size: 8px;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 20px;
-            margin-left: 6px;
-            letter-spacing: 0.8px;
-            vertical-align: middle;
-        }
-
-        /* Divider */
-        .divider {
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
-            border-radius: 2px;
-            margin: 0 auto;
-        }
-
-        /* Footer Section */
-        .footer-section {
-            padding: 40px 24px 48px;
-            text-align: center;
-        }
-        .legal-links {
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            margin-top: 20px;
-        }
+        .divider { width: 40px; height: 3px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); border-radius: 2px; margin: 0 auto; }
+        .footer-section { padding: 40px 24px 48px; text-align: center; }
+        .legal-links { display: flex; gap: 32px; justify-content: center; margin-top: 20px; }
         .legal-links a {
-            color: var(--muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-            position: relative;
+            color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            transition: color 0.2s; position: relative;
         }
         .legal-links a:hover { color: var(--primary); }
         .legal-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background: var(--primary);
-            transition: width 0.2s;
+            content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px;
+            background: var(--primary); transition: width 0.2s;
         }
         .legal-links a:hover::after { width: 100%; }
-
-        .copyright {
-            color: #ccc;
-            font-size: 0.8rem;
-            margin-top: 24px;
-        }
-
-        /* Mobile */
+        .copyright { color: #ccc; font-size: 0.8rem; margin-top: 24px; }
         @media (max-width: 480px) {
             .app-name { font-size: 2.6rem; }
             .tagline { font-size: 1rem; }
@@ -190,13 +78,13 @@
                     <div class="store-text-big">App Store</div>
                 </div>
             </a>
-            <div class="store-btn coming-soon">
+            <a href="https://play.google.com/store/apps/details?id=com.phamtiendat1099.noms" class="store-btn" target="_blank">
                 <svg class="store-icon" viewBox="0 0 512 512"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" fill="#fff"/></svg>
                 <div class="store-text">
                     <div class="store-text-small">Get it on</div>
-                    <div class="store-text-big">Google Play <span class="soon-badge">SOON</span></div>
+                    <div class="store-text-big">Google Play</div>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
