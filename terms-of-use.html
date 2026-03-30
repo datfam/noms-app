@@ -13,7 +13,8 @@
         .logo-small { width: 50px; margin-bottom: 20px; }
         h1 { color: var(--primary); font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -1px; }
         h2 { color: var(--primary); margin-top: 40px; font-size: 1.6rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .back-link { display: inline-block; margin-bottom: 30px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        .back-link { display: inline-block; margin-bottom: 30px; color: var(--primary); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+        .back-link:hover { opacity: 0.7; }
         ul { padding-left: 20px; }
         li { margin-bottom: 12px; }
         .highlight { background: #FFF3EE; border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 8px; margin: 20px 0; }
@@ -22,10 +23,11 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back-link">&larr; Legal Center</a>
+        <a href="index.html" class="back-link">&larr; Back to NOMS</a>
         <img src="noms_logo.png" alt="NOMS" class="logo-small">
         <h1>Terms of Use</h1>
-        <p><strong>Last updated: March 18, 2026</strong></p>
+        <p><strong>Last updated: March 29, 2026</strong></p>
+        <p><strong>Applies to:</strong> NOMS on iOS (App Store) and Android (Google Play)</p>
 
         <h2>1. Intellectual Property</h2>
         <p>The NOMS application, including its design, source code, and unique features like <strong>Physics Box</strong> and <strong>Visual Clusters</strong>, are the intellectual property of the developer. You may not decompile or copy any part of the app.</p>
@@ -33,10 +35,11 @@
         <h2>2. NOMS PRO Subscriptions</h2>
         <p>NOMS PRO offers premium features via auto-renewable subscriptions.</p>
         <ul>
-            <li>Payments are charged to your Apple ID account at confirmation.</li>
+            <li>Payments are charged to your Apple ID account (on iOS) or Google Play account (on Android) at confirmation.</li>
             <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period.</li>
-            <li>You can manage or cancel your subscription in your App Store Account Settings.</li>
+            <li>You can manage or cancel your subscription in your App Store Account Settings (iOS) or Google Play subscription settings (Android).</li>
             <li>Subscription status is verified through RevenueCat Inc., a third-party service.</li>
+            <li>NOMS PRO is also available as a one-time lifetime purchase, which grants permanent access to all PRO features without recurring charges.</li>
         </ul>
 
         <h2>3. AI Nutrition Estimation</h2>
@@ -47,7 +50,7 @@
             <li><strong>Estimates only:</strong> AI-generated nutritional values (calories, carbs, protein, fat) are approximate estimates produced by a third-party AI model. They are <strong>not verified by a dietitian, nutritionist, or medical professional</strong> and should not be treated as accurate or definitive.</li>
             <li><strong>Not medical or dietary advice:</strong> NOMS does not provide medical, nutritional, or dietary advice. The AI estimates are intended for general informational and journaling purposes only. Do not rely on them for medical decisions, dietary planning for health conditions, or any situation requiring professional guidance.</li>
             <li><strong>Your responsibility:</strong> You are responsible for verifying nutritional information if accuracy is important to you. NOMS encourages you to review and adjust AI-generated values before saving.</li>
-            <li><strong>Third-party processing:</strong> This feature requires sending your food photo to Groq Inc., a third-party AI service, for analysis. By consenting to use this feature in the app, you agree to this data transmission. See our <a href="privacy.html" style="color: var(--primary);">Privacy Policy</a> for full details.</li>
+            <li><strong>Third-party processing:</strong> This feature requires sending your food photo to Groq Inc., a third-party AI service, for analysis. By consenting to use this feature in the app, you agree to this data transmission. See our <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a> for full details.</li>
             <li><strong>Availability:</strong> The AI estimation feature depends on a third-party service and may be unavailable, interrupted, or discontinued at any time without notice. NOMS is not liable for any downtime or changes to this feature.</li>
         </ul>
 
@@ -56,7 +59,7 @@
             <p>NOMS includes an optional social feature called Peek. By using Peek, you agree to the following terms:</p>
         </div>
         <ul>
-            <li><strong>Account required:</strong> Peek requires authentication via Sign in with Apple. By signing in, you agree to create a Peek profile that is visible to your friends.</li>
+            <li><strong>Account required:</strong> Peek requires authentication via Sign in with Apple (on iOS) or Google Sign-In (on Android). By signing in, you agree to create a Peek profile that is visible to your friends.</li>
             <li><strong>Shared content:</strong> When you share a food entry to Peek, it becomes visible to your accepted friends. You are responsible for the content you share. Do not share content that is offensive, illegal, or violates the rights of others.</li>
             <li><strong>Temporary visibility:</strong> Shared food entries are visible for a limited period (up to 2 days for free users) and are then automatically deleted from the server. This is by design and is not a malfunction.</li>
             <li><strong>No guarantee of availability:</strong> Peek depends on external server infrastructure and may be unavailable, modified, or discontinued at any time without notice.</li>
@@ -77,15 +80,15 @@
 
         <h2>6. Advertisements</h2>
         <p>NOMS displays advertisements to free users within certain areas of the app. Advertisements are served by Google AdMob. By using the free version of NOMS, you agree to the display of advertisements.</p>
-        <p>NOMS also offers optional rewarded video advertisements. Watching a rewarded ad is always your choice and provides temporary in-app benefits. Rewarded ads are never forced upon you.</p>
+        <p>NOMS also offers optional rewarded video advertisements. Watching a rewarded ad is always your choice and provides temporary in-app benefits (such as a 24-hour skin trial). Rewarded ads are never forced upon you.</p>
         <p>PRO subscribers do not see any advertisements.</p>
 
-        <h2>7. Account Deletion</h2>
+        <h2>7. Account &amp; Data Deletion</h2>
         <p>You have the right to delete your account and data:</p>
         <ul>
-            <li><strong>Local data:</strong> Deleting the app removes all local data from your device.</li>
+            <li><strong>Local data:</strong> You can delete all data from within the app via Settings &rarr; Delete All Data. Alternatively, uninstalling the app removes all local data from your device.</li>
             <li><strong>Peek account:</strong> You can delete your Peek account from within the app (Profile &rarr; Delete Peek Account). This permanently and irreversibly removes your profile, shared entries, photos, reactions, and friend connections from our servers.</li>
-            <li><strong>iCloud data:</strong> Data synced to iCloud can be managed through your device&rsquo;s iCloud storage settings.</li>
+            <li><strong>Cloud data:</strong> On iOS, data synced to iCloud can be managed through your device&rsquo;s iCloud storage settings. On Android, all data is stored locally and removed when the app is uninstalled or when you use the in-app deletion option.</li>
         </ul>
 
         <h2>8. Disclaimers</h2>
