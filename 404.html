@@ -24,7 +24,8 @@
         .btn {
             display: block; width: 100%; padding: 14px 0; text-align: center;
             border-radius: 16px; font-size: 16px; font-weight: 600;
-            text-decoration: none; margin-bottom: 12px;
+            text-decoration: none; margin-bottom: 12px; cursor: pointer;
+            border: none;
         }
         .btn-primary {
             background: linear-gradient(135deg, #D4735E, #C4654D);
@@ -41,17 +42,18 @@
         <div class="emoji">🍜</div>
         <h1>Noms — Peek</h1>
         <p id="desc"></p>
-        <a class="btn btn-primary" id="openBtn" href="#"></a>
+        <button class="btn btn-primary" id="openBtn" onclick="openApp()"></button>
         <a class="btn btn-secondary" id="storeBtn" href="https://apps.apple.com/app/id6759185418"></a>
         <p class="sub" id="sub"></p>
     </div>
     <script>
         var isVi = /^vi/i.test(navigator.language || '');
         var isPeek = /^\/peek\//i.test(window.location.pathname);
+        var code = '';
 
         if (isPeek) {
             var parts = window.location.pathname.split('/');
-            var code = parts[2] || '';
+            code = parts[2] || '';
 
             document.getElementById('desc').textContent = isVi
                 ? 'Ai đó muốn thêm bạn trên Noms Peek!'
@@ -59,7 +61,6 @@
             document.getElementById('openBtn').textContent = isVi
                 ? 'Mở trong Noms'
                 : 'Open in Noms';
-            document.getElementById('openBtn').href = 'noms://peek/' + code;
             document.getElementById('storeBtn').textContent = isVi
                 ? 'Chưa có app? Tải Noms'
                 : "Don't have the app? Get Noms";
@@ -74,6 +75,25 @@
                 : 'Go to homepage';
             document.getElementById('storeBtn').href = 'https://noms.live';
             document.getElementById('sub').textContent = '';
+        }
+
+        function openApp() {
+            var appUrl = 'noms://peek/' + code;
+            var storeUrl = 'https://apps.apple.com/app/id6759185418';
+            var btn = document.getElementById('openBtn');
+
+            // Try opening the app
+            var start = Date.now();
+            window.location.href = appUrl;
+
+            // If app not installed, browser stays on page
+            // After 1.5s, redirect to App Store
+            setTimeout(function() {
+                if (Date.now() - start < 2000) {
+                    btn.textContent = isVi ? 'Đang chuyển đến App Store...' : 'Redirecting to App Store...';
+                    window.location.href = storeUrl;
+                }
+            }, 1500);
         }
     </script>
 </body>
