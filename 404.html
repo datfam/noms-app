@@ -24,7 +24,8 @@
         .btn {
             display: block; width: 100%; padding: 14px 0; text-align: center;
             border-radius: 16px; font-size: 16px; font-weight: 600;
-            text-decoration: none; margin-bottom: 12px;
+            text-decoration: none; margin-bottom: 12px; cursor: pointer;
+            border: none;
         }
         .btn-primary {
             background: linear-gradient(135deg, #D4735E, #C4654D);
@@ -40,7 +41,7 @@
         <div class="emoji">🍜</div>
         <h1>Noms — Peek</h1>
         <p id="desc"></p>
-        <a class="btn btn-primary" id="openBtn" href="#"></a>
+        <button class="btn btn-primary" id="openBtn" onclick="openApp()"></button>
         <a class="btn btn-secondary" href="https://apps.apple.com/app/id6759185418" id="storeBtn"></a>
     </div>
     <script>
@@ -50,7 +51,6 @@
         var code = parts[2] || '';
 
         if (isPeek && code) {
-            // Smart App Banner — native iOS banner
             var meta = document.createElement('meta');
             meta.name = 'apple-itunes-app';
             meta.content = 'app-id=6759185418, app-argument=noms://peek/' + code;
@@ -62,7 +62,6 @@
             document.getElementById('openBtn').textContent = isVi
                 ? 'Mở trong Noms'
                 : 'Open in Noms';
-            document.getElementById('openBtn').href = 'noms://peek/' + code;
             document.getElementById('storeBtn').textContent = isVi
                 ? 'Tải Noms trên App Store'
                 : 'Get Noms on App Store';
@@ -73,6 +72,25 @@
             document.getElementById('storeBtn').textContent = isVi
                 ? 'Về trang chủ' : 'Go to homepage';
             document.getElementById('storeBtn').href = 'https://noms.live';
+        }
+
+        function openApp() {
+            var appUrl = 'noms://peek/' + code;
+            var storeUrl = 'https://apps.apple.com/app/id6759185418';
+
+            // Try opening app
+            window.location.href = appUrl;
+
+            // Fallback: if app opened, window blurs → cancel redirect
+            // If app not installed, error dialog shows → user dismisses → redirect fires
+            var t = setTimeout(function() {
+                window.location.href = storeUrl;
+            }, 1500);
+
+            window.addEventListener('pagehide', function() { clearTimeout(t); });
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) clearTimeout(t);
+            });
         }
     </script>
 </body>
