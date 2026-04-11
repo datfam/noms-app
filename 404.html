@@ -20,15 +20,20 @@
         .card { text-align: center; padding: 48px 32px; max-width: 360px; }
         .emoji { font-size: 64px; margin-bottom: 16px; }
         h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
-        p { font-size: 15px; color: #7A7A7A; margin-bottom: 32px; line-height: 1.5; }
+        p { font-size: 15px; color: #7A7A7A; margin-bottom: 24px; line-height: 1.5; }
         .btn {
-            display: inline-block; padding: 14px 32px;
-            background: linear-gradient(135deg, #D4735E, #C4654D);
-            color: white; text-decoration: none; border-radius: 16px;
-            font-size: 16px; font-weight: 600;
-            box-shadow: 0 4px 16px rgba(212, 115, 94, 0.3);
+            display: block; width: 100%; padding: 14px 0; text-align: center;
+            border-radius: 16px; font-size: 16px; font-weight: 600;
+            text-decoration: none; margin-bottom: 12px;
         }
-        .sub { font-size: 12px; color: #ABABAB; margin-top: 16px; }
+        .btn-primary {
+            background: linear-gradient(135deg, #D4735E, #C4654D);
+            color: white; box-shadow: 0 4px 16px rgba(212, 115, 94, 0.3);
+        }
+        .btn-secondary {
+            background: #F4F3F1; color: #7A7A7A;
+        }
+        .sub { font-size: 12px; color: #ABABAB; margin-top: 8px; }
     </style>
 </head>
 <body>
@@ -36,33 +41,38 @@
         <div class="emoji">🍜</div>
         <h1>Noms — Peek</h1>
         <p id="desc"></p>
-        <a class="btn" href="https://apps.apple.com/app/id6759185418" id="btn"></a>
+        <a class="btn btn-primary" id="openBtn" href="#"></a>
+        <a class="btn btn-secondary" id="storeBtn" href="https://apps.apple.com/app/id6759185418"></a>
         <p class="sub" id="sub"></p>
     </div>
     <script>
         var isVi = /^vi/i.test(navigator.language || '');
         var isPeek = /^\/peek\//i.test(window.location.pathname);
+
         if (isPeek) {
+            var parts = window.location.pathname.split('/');
+            var code = parts[2] || '';
+
             document.getElementById('desc').textContent = isVi
-                ? 'Tải Noms để thêm bạn bè và chia sẻ nhật ký ăn uống cùng nhau!'
-                : 'Download Noms to add friends and share your food diary together!';
-            document.getElementById('btn').textContent = isVi
-                ? 'Tải Noms trên App Store'
-                : 'Get Noms on App Store';
-            document.getElementById('sub').textContent = isVi
-                ? 'Đang chuyển hướng...'
-                : 'Redirecting...';
-            setTimeout(function() {
-                window.location.href = 'https://apps.apple.com/app/id6759185418';
-            }, 2000);
+                ? 'Ai đó muốn thêm bạn trên Noms Peek!'
+                : 'Someone wants to add you on Noms Peek!';
+            document.getElementById('openBtn').textContent = isVi
+                ? 'Mở trong Noms'
+                : 'Open in Noms';
+            document.getElementById('openBtn').href = 'noms://peek/' + code;
+            document.getElementById('storeBtn').textContent = isVi
+                ? 'Chưa có app? Tải Noms'
+                : "Don't have the app? Get Noms";
+            document.getElementById('sub').textContent = '';
         } else {
             document.getElementById('desc').textContent = isVi
                 ? 'Trang không tồn tại.'
                 : 'Page not found.';
-            document.getElementById('btn').textContent = isVi
+            document.getElementById('openBtn').style.display = 'none';
+            document.getElementById('storeBtn').textContent = isVi
                 ? 'Về trang chủ'
                 : 'Go to homepage';
-            document.getElementById('btn').href = 'https://noms.live';
+            document.getElementById('storeBtn').href = 'https://noms.live';
             document.getElementById('sub').textContent = '';
         }
     </script>
