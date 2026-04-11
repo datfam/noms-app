@@ -6,6 +6,17 @@
     <title>Noms — Peek</title>
     <meta property="og:title" content="Add me on Noms Peek!">
     <meta property="og:description" content="Download Noms to connect and share your food diary with friends.">
+    <script>
+        // Dynamically set Smart App Banner with invite code
+        var parts = window.location.pathname.split('/');
+        var code = parts[2] || '';
+        if (code) {
+            var meta = document.createElement('meta');
+            meta.name = 'apple-itunes-app';
+            meta.content = 'app-id=6759185418, app-argument=noms://peek/' + code;
+            document.head.appendChild(meta);
+        }
+    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -34,7 +45,6 @@
         .btn-secondary {
             background: #F4F3F1; color: #7A7A7A;
         }
-        .sub { font-size: 12px; color: #ABABAB; margin-top: 8px; }
     </style>
 </head>
 <body>
@@ -43,18 +53,13 @@
         <h1>Noms — Peek</h1>
         <p id="desc"></p>
         <button class="btn btn-primary" id="openBtn" onclick="openApp()"></button>
-        <a class="btn btn-secondary" id="storeBtn" href="https://apps.apple.com/app/id6759185418"></a>
-        <p class="sub" id="sub"></p>
+        <a class="btn btn-secondary" href="https://apps.apple.com/app/id6759185418" id="storeBtn"></a>
     </div>
     <script>
         var isVi = /^vi/i.test(navigator.language || '');
         var isPeek = /^\/peek\//i.test(window.location.pathname);
-        var code = '';
 
         if (isPeek) {
-            var parts = window.location.pathname.split('/');
-            code = parts[2] || '';
-
             document.getElementById('desc').textContent = isVi
                 ? 'Ai đó muốn thêm bạn trên Noms Peek!'
                 : 'Someone wants to add you on Noms Peek!';
@@ -62,38 +67,33 @@
                 ? 'Mở trong Noms'
                 : 'Open in Noms';
             document.getElementById('storeBtn').textContent = isVi
-                ? 'Chưa có app? Tải Noms'
-                : "Don't have the app? Get Noms";
-            document.getElementById('sub').textContent = '';
+                ? 'Tải Noms trên App Store'
+                : 'Get Noms on App Store';
         } else {
             document.getElementById('desc').textContent = isVi
-                ? 'Trang không tồn tại.'
-                : 'Page not found.';
+                ? 'Trang không tồn tại.' : 'Page not found.';
             document.getElementById('openBtn').style.display = 'none';
             document.getElementById('storeBtn').textContent = isVi
-                ? 'Về trang chủ'
-                : 'Go to homepage';
+                ? 'Về trang chủ' : 'Go to homepage';
             document.getElementById('storeBtn').href = 'https://noms.live';
-            document.getElementById('sub').textContent = '';
         }
 
         function openApp() {
             var appUrl = 'noms://peek/' + code;
             var storeUrl = 'https://apps.apple.com/app/id6759185418';
-            var btn = document.getElementById('openBtn');
 
-            // Try opening the app
-            var start = Date.now();
-            window.location.href = appUrl;
+            // Try opening app silently via iframe (no error dialog)
+            var iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = appUrl;
+            document.body.appendChild(iframe);
 
-            // If app not installed, browser stays on page
-            // After 1.5s, redirect to App Store
+            // If app opened, page becomes inactive → setTimeout won't fire
+            // If app NOT installed, iframe fails silently → redirect to App Store
             setTimeout(function() {
-                if (Date.now() - start < 2000) {
-                    btn.textContent = isVi ? 'Đang chuyển đến App Store...' : 'Redirecting to App Store...';
-                    window.location.href = storeUrl;
-                }
-            }, 1500);
+                document.body.removeChild(iframe);
+                window.location.href = storeUrl;
+            }, 800);
         }
     </script>
 </body>
