@@ -6,17 +6,6 @@
     <title>Noms — Peek</title>
     <meta property="og:title" content="Add me on Noms Peek!">
     <meta property="og:description" content="Download Noms to connect and share your food diary with friends.">
-    <script>
-        // Dynamically set Smart App Banner with invite code
-        var parts = window.location.pathname.split('/');
-        var code = parts[2] || '';
-        if (code) {
-            var meta = document.createElement('meta');
-            meta.name = 'apple-itunes-app';
-            meta.content = 'app-id=6759185418, app-argument=noms://peek/' + code;
-            document.head.appendChild(meta);
-        }
-    </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -35,8 +24,7 @@
         .btn {
             display: block; width: 100%; padding: 14px 0; text-align: center;
             border-radius: 16px; font-size: 16px; font-weight: 600;
-            text-decoration: none; margin-bottom: 12px; cursor: pointer;
-            border: none;
+            text-decoration: none; margin-bottom: 12px;
         }
         .btn-primary {
             background: linear-gradient(135deg, #D4735E, #C4654D);
@@ -52,20 +40,29 @@
         <div class="emoji">🍜</div>
         <h1>Noms — Peek</h1>
         <p id="desc"></p>
-        <button class="btn btn-primary" id="openBtn" onclick="openApp()"></button>
+        <a class="btn btn-primary" id="openBtn" href="#"></a>
         <a class="btn btn-secondary" href="https://apps.apple.com/app/id6759185418" id="storeBtn"></a>
     </div>
     <script>
         var isVi = /^vi/i.test(navigator.language || '');
         var isPeek = /^\/peek\//i.test(window.location.pathname);
+        var parts = window.location.pathname.split('/');
+        var code = parts[2] || '';
 
-        if (isPeek) {
+        if (isPeek && code) {
+            // Smart App Banner — native iOS banner
+            var meta = document.createElement('meta');
+            meta.name = 'apple-itunes-app';
+            meta.content = 'app-id=6759185418, app-argument=noms://peek/' + code;
+            document.head.appendChild(meta);
+
             document.getElementById('desc').textContent = isVi
                 ? 'Ai đó muốn thêm bạn trên Noms Peek!'
                 : 'Someone wants to add you on Noms Peek!';
             document.getElementById('openBtn').textContent = isVi
                 ? 'Mở trong Noms'
                 : 'Open in Noms';
+            document.getElementById('openBtn').href = 'noms://peek/' + code;
             document.getElementById('storeBtn').textContent = isVi
                 ? 'Tải Noms trên App Store'
                 : 'Get Noms on App Store';
@@ -76,24 +73,6 @@
             document.getElementById('storeBtn').textContent = isVi
                 ? 'Về trang chủ' : 'Go to homepage';
             document.getElementById('storeBtn').href = 'https://noms.live';
-        }
-
-        function openApp() {
-            var appUrl = 'noms://peek/' + code;
-            var storeUrl = 'https://apps.apple.com/app/id6759185418';
-
-            // Try opening app silently via iframe (no error dialog)
-            var iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = appUrl;
-            document.body.appendChild(iframe);
-
-            // If app opened, page becomes inactive → setTimeout won't fire
-            // If app NOT installed, iframe fails silently → redirect to App Store
-            setTimeout(function() {
-                document.body.removeChild(iframe);
-                window.location.href = storeUrl;
-            }, 800);
         }
     </script>
 </body>
